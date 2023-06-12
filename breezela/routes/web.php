@@ -13,8 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return ['Laravel' => app()->version()];
+Route::resource('ps',\App\Http\Controllers\PostController::class);
+
+
+
+
+Route::get('/', function(){
+    return view('welcome');
 });
+
+Route::get('/dashboard', function(){
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+// Route::get('/', function () {
+//     return ['Laravel' => app()->version()];
+// });
 
 require __DIR__.'/auth.php';
