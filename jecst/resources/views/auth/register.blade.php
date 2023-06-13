@@ -10,6 +10,12 @@
             @csrf
 
             <div>
+                <x-label for="id" value="{{ __('id') }}" />
+                <x-input id="id" class="block mt-1 w-full" type="text" name="id" :value="old('name')" required autofocus autocomplete="nickname" />
+            </div>
+
+
+            <div>
                 <x-label for="name" value="{{ __('Name') }}" />
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
             </div>
